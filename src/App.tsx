@@ -16,14 +16,14 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen transition-colors duration-300 ${
+      className={`min-h-screen transition-colors duration-500 ${
         isDark
           ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white'
           : 'bg-gradient-to-br from-gray-50 via-white to-gray-100 text-slate-900'
       }`}
     >
       <Header activeSection={activeSection} setActiveSection={setActiveSection} />
-      <main>
+      <main className="relative">
         <Hero />
         <About />
         <Skills />
