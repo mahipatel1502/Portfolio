@@ -8,12 +8,12 @@ const Skills = () => {
     {
       title: 'Programming Languages',
       icon: Code,
-      skills: ['HTML', 'CSS', 'JavaScript', 'Java', 'C', 'C++', 'Python'],
+      skills: ['JavaScript', 'Java', 'C++', 'Python'],
     },
     {
       title: 'Web Technology',
       icon: Cpu,
-      skills: ['React', 'React Native', 'Node.js', 'Express.js', 'Tailwind CSS'],
+      skills: ['HTML', 'CSS','React', 'Node.js', 'Express.js', 'Tailwind CSS'],
     },
     {
       title: 'Database',
