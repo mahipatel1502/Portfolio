@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 const Contact = () => {
@@ -21,7 +21,7 @@ const Contact = () => {
               Feel free to reach out for collaborations, opportunities, or just to say hello! I'm always open to discussing new projects and opportunities.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 max-w-5xl mx-auto">
               <a
                 href="mailto:mahiptl1502@gmail.com"
                 className={`flex items-center gap-3 px-4 py-4 rounded-xl transition-all duration-300 group hover:scale-105 hover:-translate-y-1 ${
@@ -42,29 +42,6 @@ const Contact = () => {
                 <div className="min-w-0">
                   <p className={`text-xs uppercase tracking-wider font-semibold ${isDark ? 'text-gray-400' : 'text-slate-600'}`}>Email</p>
                   <p className={`font-medium text-sm truncate ${isDark ? 'text-gray-300 group-hover:text-cyan-400' : 'text-slate-700 group-hover:text-cyan-600'}`}>mahiptl1502@gmail.com</p>
-                </div>
-              </a>
-
-              <a
-                href="tel:+919879663276"
-                className={`flex items-center gap-3 px-4 py-4 rounded-xl transition-all duration-300 group hover:scale-105 hover:-translate-y-1 ${
-                  isDark
-                    ? 'bg-slate-800/50 border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/20'
-                    : 'bg-white/50 border border-gray-200 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-400/20'
-                }`}
-              >
-                <div
-                  className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 ${
-                    isDark
-                      ? 'bg-slate-700 group-hover:bg-gradient-to-br group-hover:from-cyan-400 group-hover:to-blue-500'
-                      : 'bg-gray-200 group-hover:bg-gradient-to-br group-hover:from-cyan-400 group-hover:to-blue-500 text-slate-900'
-                  }`}
-                >
-                  <Phone size={20} className="group-hover:text-white transition-colors duration-300" />
-                </div>
-                <div className="min-w-0">
-                  <p className={`text-xs uppercase tracking-wider font-semibold ${isDark ? 'text-gray-400' : 'text-slate-600'}`}>Phone</p>
-                  <p className={`font-medium text-sm ${isDark ? 'text-gray-300 group-hover:text-cyan-400' : 'text-slate-700 group-hover:text-cyan-600'}`}>+91 9879663276</p>
                 </div>
               </a>
 
