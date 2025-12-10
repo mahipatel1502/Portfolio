@@ -31,7 +31,7 @@ const About = () => {
             <p className="text-cyan-400 font-semibold mb-1">CHARUSAT University</p>
             <p className={`text-sm mb-3 ${isDark ? 'text-gray-400' : 'text-slate-600'}`}>2023 - 2027</p>
             <div className={`inline-block px-4 py-2 rounded-full ${isDark ? 'bg-cyan-500/10 border border-cyan-500/30' : 'bg-cyan-50 border border-cyan-200'}`}>
-              <p className={`text-lg font-bold ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>CGPA: 9.00</p>
+              <p className={`text-lg font-bold ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>CGPA: 9.03</p>
             </div>
           </div>
 
@@ -64,10 +64,7 @@ const About = () => {
             </div>
             <h3 className={`text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-slate-900'}`}>Interests</h3>
             <ul className={`${isDark ? 'text-gray-400' : 'text-slate-600'} space-y-2`}>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
-                Travelling
-              </li>
+      
               <li className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
                 Drawing
