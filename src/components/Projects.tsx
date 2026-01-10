@@ -6,6 +6,19 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'FakeXpose - Deepfake Detection',
+      description: 'A research-driven deepfake detection system using deep learning models to identify manipulated facial content in images and videos. Compares XceptionNet vs MesoNet for accurate forgery detection.',
+      technologies: ['Python', 'TensorFlow', 'React', 'Node.js', 'Supabase', 'OpenCV'],
+      github: 'https://github.com/Jay9115/Deepfake-Detection',
+      liveUrl: 'https://fakexpose-ai.vercel.app/',
+      period: 'July 2024 - Ongoing',
+      highlights: [
+        'XceptionNet and MesoNet model comparison for deepfake detection',
+        'FaceForensics++ dataset integration for training and evaluation',
+        'Full-stack web application with React and Node.js',
+      ],
+    },
+    {
       title: 'Edu-Bridge',
       description: 'A mobile app connecting students with alumni for mentorship, career guidance, and exam preparation. Enhances networking and fosters informed decision-making.',
       technologies: ['React Native', 'Node.js', 'Firebase'],
