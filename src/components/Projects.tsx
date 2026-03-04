@@ -6,6 +6,19 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'PrepIt - Data Preprocessing Platform',
+      description: 'A comprehensive data preprocessing platform with secure authentication, file upload, and analytics. Features automated data cleaning, transformation, and statistical analysis with real-time reporting capabilities.',
+      technologies: ['Next.js', 'TypeScript', 'Python', 'FastAPI', 'Firebase', 'Pandas', 'NumPy', 'scikit-learn'],
+      github: 'https://github.com/mahipatel1502/PrepIt',
+      liveUrl: 'https://prepit-data.vercel.app/',
+      period: 'January 2026 - March 2026',
+      highlights: [
+        'JWT-based authentication with secure user management',
+        'Automated data preprocessing pipeline with Pandas and NumPy',
+        'Full-stack architecture with Next.js frontend and FastAPI backend',
+      ],
+    },
+    {
       title: 'FakeXpose - Deepfake Detection',
       description: 'A research-driven deepfake detection system using deep learning models to identify manipulated facial content in images and videos. Compares XceptionNet vs MesoNet for accurate forgery detection.',
       technologies: ['Python', 'TensorFlow', 'React', 'Node.js', 'Supabase', 'OpenCV'],

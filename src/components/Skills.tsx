@@ -8,7 +8,7 @@ const Skills = () => {
     {
       title: 'Programming Languages',
       icon: Code,
-      skills: ['JavaScript', 'Java', 'C++', 'Python'],
+      skills: ['Python', 'Java', 'C++','C','JavaScript'],
     },
     {
       title: 'Web Technology',
@@ -23,7 +23,12 @@ const Skills = () => {
     {
       title: 'Data Science & Machine Learning',
       icon: Cpu,
-      skills: ['Pandas', 'NumPy', 'Matplotlib','TensorFlow','Scikit-Learn'],
+      skills: ['Pandas', 'NumPy', 'Matplotlib','TensorFlow','Scikit-Learn','Keras','Basic NLP'],
+    },
+    {
+      title: 'Computer Vision',
+      icon: Cpu,
+      skills: ['Image processing', 'Deep Learning', 'OpenCV','Data preprocessing','Model interpretation(Grad-CAM)'],
     },
     {
       title: 'Tools & Others',
