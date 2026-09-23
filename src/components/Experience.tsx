@@ -6,6 +6,17 @@ const Experience = () => {
 
   const experiences = [
     {
+      role: 'Summer Intern - Resume Analyzer',
+      company: 'Chroma Technolabs, Ahmedabad',
+      period: '1 Month | Summer Internship',
+      description: 'Completed a one-month summer internship focused on developing a resume analyzer project.',
+      responsibilities: [
+        'Worked on the development of a resume analyzer project',
+        'Applied software development concepts in a professional environment',
+        'Gained practical experience collaborating on an industry-focused project',
+      ],
+    },
+    {
       role: 'Node.js Intern',
       company: 'Sparks To Ideas',
       period: 'May 2025 - June 2025',

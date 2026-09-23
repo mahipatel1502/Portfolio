@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #f4f1e9;
+  background: #080808;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
 
 @layer base {
   html {
@@ -11,17 +21,62 @@
   body {
     @apply antialiased;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    margin: 0;
   }
 
   /* Professional typography */
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
-    letter-spacing: -0.02em;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 0;
   }
 
   p {
     @apply text-base;
     line-height: 1.7;
+  }
+}
+
+@layer components {
+  .hero-grid {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
+  }
+
+  .dark .hero-grid {
+    background-image: linear-gradient(rgba(215, 235, 90, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(215, 235, 90, 0.1) 1px, transparent 1px);
+  }
+
+  .section-kicker {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .manifesto-track {
+    width: max-content;
+    animation: manifestoScroll 28s linear infinite;
+  }
+
+  @keyframes manifestoScroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-25%);
+    }
+  }
+
+  .command-deck {
+    animation: deckEnter 180ms ease-out both;
+  }
+
+  @keyframes deckEnter {
+    from { opacity: 0; transform: translateY(-12px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
   }
 }
 
@@ -136,4 +191,112 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply from-cyan-400 to-blue-400;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+
+.bg-white\/50,
+.bg-white\/80,
+.bg-gray-50\/50,
+.bg-gray-100\/50,
+.bg-gray-100 {
+  background-color: #e8e4d9 !important;
+}
+
+.dark .bg-slate-800\/30,
+.dark .bg-slate-800\/50,
+.dark .bg-slate-900\/50,
+.dark .bg-slate-700\/50,
+.dark .bg-slate-700\/70 {
+  background-color: #121212 !important;
+}
+
+.dark .bg-slate-800\/30 {
+  background-color: #080808 !important;
+}
+
+.dark .bg-slate-900\/95 {
+  background-color: rgba(8, 8, 8, 0.95) !important;
+}
+
+.border-gray-200,
+.border-gray-300,
+.border-gray-200\/50 {
+  border-color: #b9c4b7 !important;
+}
+
+.dark .border-slate-600,
+.dark .border-slate-700 {
+  border-color: #2d2d2d !important;
+}
+
+.text-slate-900,
+.text-slate-700,
+.text-slate-600,
+.text-slate-500 {
+  color: #b9b9b0 !important;
+}
+
+.dark .text-white {
+  color: #f4f1e9 !important;
+}
+
+.dark .text-gray-300,
+.dark .text-gray-400,
+.dark .text-gray-500 {
+  color: #a7a7a0 !important;
+}
+
+.text-cyan-400,
+.dark .text-cyan-400 {
+  color: #d7eb5a !important;
+}
+
+.text-cyan-600,
+.dark .text-cyan-600 {
+  color: #e45b3c !important;
+}
+
+.bg-gradient-to-br.from-cyan-400.to-blue-500,
+.bg-gradient-to-br.from-cyan-500.to-blue-500,
+.bg-gradient-to-r.from-cyan-400.to-blue-500,
+.bg-gradient-to-r.from-cyan-500.to-blue-500 {
+  background-image: linear-gradient(135deg, #e45b3c, #d7eb5a) !important;
+}
+
+.bg-cyan-500\/10,
+.bg-cyan-500\/5,
+.dark .bg-cyan-500\/10,
+.dark .bg-cyan-500\/5 {
+  background-color: rgba(228, 91, 60, 0.12) !important;
+}
+
+.hover\:border-cyan-400\/50:hover,
+.hover\:border-cyan-400\/30:hover,
+.dark .hover\:border-cyan-500\/50:hover,
+.dark .hover\:border-cyan-500\/30:hover {
+  border-color: #e45b3c !important;
+}
+
+.dark .hover\:bg-slate-700:hover,
+.dark .hover\:bg-slate-800:hover,
+.hover\:bg-gray-100:hover,
+.hover\:bg-gray-200:hover {
+  background-color: #242424 !important;
+}
+
+.dark .bg-slate-700,
+.bg-gray-200 {
+  background-color: #242424 !important;
+}
+
+.dark .text-yellow-400 {
+  color: #d7eb5a !important;
 }

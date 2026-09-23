@@ -6,6 +6,18 @@ const Certifications = () => {
 
   const certifications = [
     {
+      title: 'Third Runner-Up - IBM BOB AI Innovation Hackathon',
+      provider: 'IBM',
+      date: 'September 2026',
+      description: 'Recognized for QUAY, an AI-powered port operations decision-support system built to predict congestion and optimize berth and crane assignments.',
+    },
+    {
+      title: 'Deep Learning',
+      provider: 'NPTEL',
+      date: 'Score: 84%',
+      description: 'Successfully completed the NPTEL Deep Learning examination with an achievement score of 84%.',
+    },
+    {
       title: 'Data Base Management',
       provider: 'NPTEL',
       date: 'March 2025',

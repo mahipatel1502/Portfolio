@@ -9,17 +9,23 @@ import Experience from './components/Experience';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CommandDeck from './components/CommandDeck';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const { isDark } = useTheme();
 
+  const navigateTo = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection(sectionId);
+  };
+
   return (
     <div
       className={`min-h-screen transition-colors duration-500 ${
         isDark
-          ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white'
-          : 'bg-gradient-to-br from-gray-50 via-white to-gray-100 text-slate-900'
+          ? 'bg-[#080808] text-white'
+          : 'bg-[#080808] text-white'
       }`}
     >
       <Header activeSection={activeSection} setActiveSection={setActiveSection} />
@@ -33,6 +39,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <CommandDeck onNavigate={navigateTo} />
     </div>
   );
 }

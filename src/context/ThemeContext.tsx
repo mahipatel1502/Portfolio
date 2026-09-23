@@ -10,8 +10,8 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('theme-mode');
-    if (saved) return saved === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved) return saved !== 'light';
+    return true;
   });
 
   useEffect(() => {

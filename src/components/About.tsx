@@ -31,7 +31,7 @@ const About = () => {
             <p className="text-cyan-400 font-semibold mb-1">CHARUSAT University</p>
             <p className={`text-sm mb-3 ${isDark ? 'text-gray-400' : 'text-slate-600'}`}>2023 - 2027</p>
             <div className={`inline-block px-4 py-2 rounded-full ${isDark ? 'bg-cyan-500/10 border border-cyan-500/30' : 'bg-cyan-50 border border-cyan-200'}`}>
-              <p className={`text-lg font-bold ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>CGPA: 9.03</p>
+              <p className={`text-lg font-bold ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>CGPA: 9.09</p>
             </div>
           </div>
 
@@ -88,7 +88,7 @@ const About = () => {
           </p>
           <p className={`text-sm md:text-base leading-relaxed mt-4 relative z-10 ${isDark ? 'text-gray-300' : 'text-slate-700'}`}>
             With a strong foundation in programming languages including <span className="font-semibold text-cyan-400">JavaScript, Python, Java, and C++</span>, I've successfully delivered 
-            diverse projects ranging from web applications to data science solutions. Currently maintaining a <span className="font-semibold text-cyan-400">CGPA of 9.00</span>, 
+            diverse projects ranging from web applications to data science solutions. Currently maintaining a <span className="font-semibold text-cyan-400">CGPA of 9.09</span>, 
             I combine academic excellence with practical experience gained through internships and hands-on projects.
           </p>
           <p className={`text-sm md:text-base leading-relaxed mt-4 relative z-10 ${isDark ? 'text-gray-300' : 'text-slate-700'}`}>

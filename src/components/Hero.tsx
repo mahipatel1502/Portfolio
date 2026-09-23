@@ -1,62 +1,89 @@
-import { Eye } from 'lucide-react';
+import { ArrowDownRight, Eye, Radio, Sparkles } from 'lucide-react';
+import { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 const Hero = () => {
   const { isDark } = useTheme();
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16 px-4 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      </div>
+  const [signalIndex, setSignalIndex] = useState(0);
 
-      <div className="container mx-auto text-center relative z-10">
-        <div className="mb-8 inline-block animate-fadeInDown">
-          <div className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 flex items-center justify-center text-5xl font-bold mx-auto mb-4 shadow-2xl shadow-cyan-500/50 animate-float ring-4 ring-cyan-400/20">
-            MP
+  const signals = [
+    { label: 'Building next', value: 'Data tools that feel human', detail: 'PrepIt / product thinking' },
+    { label: 'Exploring', value: 'Vision models & trust', detail: 'FakeXpose / research mode' },
+    { label: 'Looking for', value: 'A problem worth solving', detail: 'Open to thoughtful teams' },
+  ];
+  const signal = signals[signalIndex];
+
+  return (
+    <section id="home" className="min-h-screen flex items-center pt-20 px-5 md:px-10 relative overflow-hidden bg-[#080808]">
+      <div className="hero-grid absolute inset-0 pointer-events-none" />
+      <div className="absolute top-28 right-8 md:right-16 text-[10px] section-kicker text-[#d7eb5a] [writing-mode:vertical-rl]">Mahi Patel / 2026</div>
+
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center">
+          <div>
+            <div className="flex items-center gap-3 mb-8 animate-fadeInDown">
+              <span className="h-px w-10 bg-[#e45b3c]" />
+              <p className={`section-kicker text-xs font-semibold ${isDark ? 'text-[#d7eb5a]' : 'text-[#e45b3c]'}`}>Route found / mission in progress</p>
+            </div>
+
+            <h1 className={`text-6xl md:text-8xl leading-[0.88] font-bold mb-8 animate-fadeInUp ${isDark ? 'text-[#f4f1e9]' : 'text-[#142321]'}`}>
+              Hi, I’m<br /><span className="text-[#e45b3c]">Mahi<span className={isDark ? 'text-[#d7eb5a]' : 'text-[#142321]'}>.</span></span>
+            </h1>
+
+            <div className="animate-fadeInUp max-w-xl" style={{ animationDelay: '0.2s' }}>
+              <p className={`text-lg md:text-xl leading-relaxed mb-8 ${isDark ? 'text-[#b9c7bd]' : 'text-[#42534e]'}`}>
+                I build useful things for messy problems: full-stack products, mobile experiences, and machine learning tools that make sense in the real world.
+              </p>
+            </div>
+
+            <div className="animate-fadeInUp flex flex-col sm:flex-row items-start sm:items-center gap-5" style={{ animationDelay: '0.4s' }}>
+              <a href="#contact" className="inline-flex items-center gap-3 px-6 py-3.5 bg-[#e45b3c] text-white font-semibold hover:bg-[#c9472f] transition-all duration-300 hover:-translate-y-1 group">
+                <span>Start a conversation</span><ArrowDownRight size={18} className="group-hover:rotate-45 transition-transform" />
+              </a>
+
+              <a
+                href="/Mahi_Patel.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-2 px-1 py-3.5 font-semibold transition-all duration-300 border-b-2 ${isDark ? 'border-[#d7eb5a] text-[#d7eb5a] hover:text-white hover:border-white' : 'border-[#142321] text-[#142321] hover:text-[#e45b3c] hover:border-[#e45b3c]'}`}
+              >
+                <Eye size={20} />
+                <span>View Resume</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="animate-scaleIn lg:pt-10" style={{ animationDelay: '0.35s' }}>
+            <div className="relative border border-[#2d2d2d] bg-[#121212] p-6 md:p-8">
+              <div className="flex items-center justify-between mb-14">
+                <div className="flex items-center gap-2">
+                  <Radio size={16} className="text-[#e45b3c] animate-pulse" />
+                  <span className="section-kicker text-[10px] font-bold">Live signal</span>
+                </div>
+                <span className="text-[10px] section-kicker text-[#a7a7a0]">0{signalIndex + 1} / 03</span>
+              </div>
+              <p className={`section-kicker text-[10px] mb-3 ${isDark ? 'text-[#d7eb5a]' : 'text-[#e45b3c]'}`}>{signal.label}</p>
+              <h2 className={`text-3xl md:text-4xl leading-tight mb-5 ${isDark ? 'text-[#f4f1e9]' : 'text-[#142321]'}`}>{signal.value}</h2>
+              <p className="text-sm text-[#a7a7a0] mb-12">{signal.detail}</p>
+              <button
+                type="button"
+                onClick={() => setSignalIndex((signalIndex + 1) % signals.length)}
+                className="w-full flex items-center justify-between border-t border-[#2d2d2d] pt-4 text-left text-xs font-semibold text-[#d7eb5a] transition-colors hover:text-white"
+              >
+                <span>Change direction</span><Sparkles size={16} />
+              </button>
+              <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-[#e45b3c]" />
+            </div>
+            <div className="flex items-center gap-4 mt-6">
+              <span className="text-xs section-kicker text-[#a7a7a0]">Scroll to explore</span>
+              <span className="h-px flex-1 bg-[#e45b3c]/50" />
+            </div>
           </div>
         </div>
-
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-600 bg-clip-text text-transparent animate-fadeInUp">
-          Mahi Patel
-        </h1>
-
-        <div className="animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-          <p className="text-lg md:text-xl text-cyan-400 mb-6 font-semibold tracking-wide">
-            Computer Science Student 
-          </p>
-
-          <p className={`text-base max-w-2xl mx-auto mb-8 leading-relaxed ${isDark ? 'text-gray-400' : 'text-slate-600'}`}>
-            Computer Science student with a passion for web development. Skilled in React Native, Node.js, and Firebase,
-            building innovative solutions for real-world problems.
-          </p>
-        </div>
-
-
-
-        <div className="mt-12 animate-fadeInUp flex flex-col sm:flex-row items-center justify-center gap-4" style={{ animationDelay: '0.8s' }}>
-          <a
-            href="#contact"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1 relative overflow-hidden group"
-          >
-            <span className="relative z-10">Get In Touch</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </a>
-          
-          <a
-            href="/Mahi_Patel.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:-translate-y-1 border-2 ${
-              isDark 
-                ? 'border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 hover:shadow-2xl hover:shadow-cyan-400/30'
-                : 'border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white hover:shadow-2xl hover:shadow-cyan-500/30'
-            }`}
-          >
-            <Eye size={20} />
-            <span>View Resume</span>
-          </a>
+        <div className="manifesto-ticker mt-20 border-y border-[#2d2d2d] py-4 overflow-hidden">
+          <div className="manifesto-track section-kicker text-xs text-[#d7eb5a] whitespace-nowrap">
+            Good ideas deserve useful interfaces <span className="text-[#e45b3c] px-6">·</span> Build less noise, solve more problems <span className="text-[#e45b3c] px-6">·</span> Good ideas deserve useful interfaces <span className="text-[#e45b3c] px-6">·</span> Build less noise, solve more problems
+          </div>
         </div>
       </div>
     </section>

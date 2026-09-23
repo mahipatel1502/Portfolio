@@ -6,6 +6,19 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'QUAY - Port Operations Optimiser',
+      description: 'An intelligent port operations decision-support system that predicts container congestion up to 72 hours ahead, optimizes berth and crane assignments, and helps supervisors respond to operational bottlenecks.',
+      technologies: ['Python', 'TypeScript', 'React', 'FastAPI', 'Google OR-Tools', 'scikit-learn', 'IBM watsonx.ai'],
+      github: 'https://github.com/Vishva265/bob-ai-hackathon-QUAY_Dynamics',
+      period: 'September 2026',
+      highlights: [
+        '72-hour congestion forecasting across berths, cranes, and yard capacity',
+        'Constraint-based berth and crane scheduling with Google OR-Tools CP-SAT',
+        'Auditable shift plans and evidence-grounded BOB Operations Copilot',
+        'Third Runner-Up at the IBM BOB AI Innovation Hackathon',
+      ],
+    },
+    {
       title: 'PrepIt - Data Preprocessing Platform',
       description: 'A comprehensive data preprocessing platform with secure authentication, file upload, and analytics. Features automated data cleaning, transformation, and statistical analysis with real-time reporting capabilities.',
       technologies: ['Next.js', 'TypeScript', 'Python', 'FastAPI', 'Firebase', 'Pandas', 'NumPy', 'scikit-learn'],
@@ -43,20 +56,6 @@ const Projects = () => {
         'Career guidance and mentorship features',
       ],
     },
-    {
-      title: 'Tour Guide Website',
-      description: 'Interactive website showcasing tourist attractions with multilingual support, integrated maps, and user-generated content.',
-      technologies: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB'],
-      github: 'https://github.com/mahipatel1502/Full-stack-Development',
-      liveUrl: 'https://travello-go.vercel.app/',
-      period: 'August 2024 - November 2024',
-      highlights: [
-        'Multilingual support for better accessibility',
-        'Interactive maps integration',
-        'User reviews and ratings system',
-      ],
-    },
-    
   ];
 
   return (
@@ -134,7 +133,7 @@ const Projects = () => {
                 </ul>
               </div>
 
-              <div className="flex flex-wrap gap-2 pt-4 border-t ${isDark ? 'border-slate-700' : 'border-gray-200'}">
+              <div className={`flex flex-wrap gap-2 pt-4 border-t ${isDark ? 'border-slate-700' : 'border-gray-200'}`}>
                 {project.technologies.map((tech, idx) => (
                   <span
                     key={idx}

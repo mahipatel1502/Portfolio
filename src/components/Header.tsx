@@ -1,4 +1,4 @@
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -9,12 +9,14 @@ interface HeaderProps {
 
 const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { isDark, toggleTheme } = useTheme();
+  const { isDark } = useTheme();
 
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Work' },
+    { id: 'certifications', label: 'Certificates' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -37,8 +39,9 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent cursor-pointer hover:scale-110 transition-transform duration-300">
-            MP
+          <div className="flex items-center gap-3 text-white cursor-pointer">
+            <span className="text-2xl font-bold tracking-tight">MP<span className="text-[#e45b3c]">.</span></span>
+            <span className="hidden lg:block text-[10px] section-kicker text-[#8d8d87]">Digital builder</span>
           </div>
 
           <div className="hidden md:flex items-center space-x-6">
@@ -46,7 +49,7 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-all duration-300 hover:text-cyan-400 hover:scale-110 relative group ${
+                className={`section-kicker text-[10px] transition-all duration-300 hover:text-[#d7eb5a] relative group ${
                   activeSection === item.id
                     ? 'text-cyan-400 font-semibold'
                     : isDark
@@ -63,18 +66,7 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
           </div>
 
           <div className="flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className={`p-2 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-12 ${
-                isDark
-                  ? 'bg-slate-800 hover:bg-slate-700 text-yellow-400 hover:shadow-lg hover:shadow-yellow-400/30'
-                  : 'bg-gray-100 hover:bg-gray-200 text-slate-600 hover:shadow-lg hover:shadow-slate-400/30'
-              }`}
-              title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-
+            <span className="hidden lg:block section-kicker text-[10px] text-[#8d8d87]">Available for good work</span>
             <button
               className={`md:hidden p-2 rounded-lg transition-colors ${
                 isDark ? 'text-white hover:bg-slate-800' : 'text-slate-900 hover:bg-gray-100'
